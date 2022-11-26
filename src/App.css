@@ -1,1 +1,32 @@
 
+
+.App {
+  width: 320px;
+  height: 480px;
+  background-color: rgb(71, 213, 221);
+  border-radius: 15px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.header-container {
+  padding: 5px;
+  background-color: rgb(30, 214, 153);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  color:rgb(38, 57, 77);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+}
+
