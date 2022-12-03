@@ -1,9 +1,6 @@
 import React from 'react';
-import data from '../data';
 
 function InputSection() {
-
-  // let [memeNum, setMemeNum] = React.useState('');
 
   const [meme, setMeme] = React.useState({
     topLine: '',
@@ -11,11 +8,17 @@ function InputSection() {
     randomImage: 'http://i.imgflip.com/1bij.jpg'
   });
 
-  const [allMemeImages, setAllMemeImages] = React.useState(data);
+  const [allMemeImages, setAllMemeImages] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://api.imgflip.com/get_memes')
+      .then(res => res.json())
+      .then(data => setAllMemeImages(data.data.memes))
+  }, []);
 
   function handleClick() {
-    let randomNum = Math.floor(Math.random() * data.length);
-    const url = data[randomNum].url;
+    let randomNum = Math.floor(Math.random() * allMemeImages.length);
+    const url = allMemeImages[randomNum].url;
     setMeme(prevState => ({
       ...prevState,
       randomImage: url
